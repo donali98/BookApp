@@ -10,7 +10,7 @@ import com.donali.bookapp.entities.Book
 @Dao
 interface BookDao{
 
-    @Query("select * from book")
+    @Query("select * from book,authorxbook,tag")
     fun getAllBooks():LiveData<List<Book>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
