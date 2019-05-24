@@ -7,9 +7,11 @@ import com.donali.bookapp.entities.Book
 
 class BookRepository(private val bookDao: BookDao) {
 
-    fun getAll():LiveData<List<Book>> = bookDao.getAllBooks()
-
-
     @WorkerThread
+    //Funcion para insertar datos
     suspend fun insert(book: Book) = bookDao.insert(book)
+
+    //Funcion para obtener todos resultados
+    fun getAll():LiveData<List<Book>> = bookDao.getAllBooks()
+//Error en credenciales
 }
